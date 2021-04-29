@@ -11,7 +11,7 @@ ENV S3_BUCKET=${S3_BUCKET}
 
 #BUILD WITH PARAMETERS
 # After build the image before we can run
-# "docker image build --build-arg S3_BUCKET=some_value ex-build-arg ." 
+# "docker image build --build-arg S3_BUCKET=some_value -t ex-build-arg ." 
 
-# Inside the debian container, we defined S3_BUCKET as an environment variable with value "files" that was passed using arguments
-# Run using "docker container run --name debian-with-arg ex-build-arg bash -c 'echo $S3_BUCKET'"
+# Inside the debian container, we defined S3_BUCKET as an environment variable with value "files" or "some_value" that was passed using arguments
+# Run using "docker container run ex-build-arg bash -c 'echo $S3_BUCKET'"
